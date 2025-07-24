@@ -1,1 +1,107 @@
 # preguntados-fisica
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntados - Física MRU</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .question {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn-true { background-color: #2ecc71; color: white; }
+    .btn-false { background-color: #e74c3c; color: white; }
+    .score {
+      font-size: 1.1em;
+      margin-top: 20px;
+    }
+    .final {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Preguntados: Cinemática MRU</h1>
+    <div class="question" id="question">Cargando pregunta...</div>
+    <button class="btn btn-true" onclick="answer(true)">Verdadero</button>
+    <button class="btn btn-false" onclick="answer(false)">Falso</button>
+    <div class="score" id="score">Puntaje: 0</div>
+    <div class="final" id="final"></div>
+  </div>  <script>
+    const questions = [
+      {
+        text: "En un MRU, la aceleración es cero.",
+        correct: true
+      },
+      {
+        text: "La velocidad en un MRU varía con el tiempo.",
+        correct: false
+      },
+      {
+        text: "En un gráfico de posición vs. tiempo en MRU, la pendiente representa la velocidad.",
+        correct: true
+      },
+      {
+        text: "La fórmula del MRU es x = x0 + v * t.",
+        correct: true
+      },
+      {
+        text: "En MRU, la aceleración puede ser constante y diferente de cero.",
+        correct: false
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      if (current < questions.length) {
+        document.getElementById("question").innerText = questions[current].text;
+      } else {
+        document.getElementById("question").style.display = "none";
+        document.querySelector(".btn-true").style.display = "none";
+        document.querySelector(".btn-false").style.display = "none";
+        document.getElementById("final").innerText = `¡Juego terminado! Puntaje final: ${score} / ${questions.length}`;
+      }
+    }
+
+    function answer(userAnswer) {
+      if (questions[current].correct === userAnswer) {
+        score++;
+      }
+      current++;
+      document.getElementById("score").innerText = `Puntaje: ${score}`;
+      loadQuestion();
+    }
+
+    loadQuestion();
+  </script></body>
+</html>
