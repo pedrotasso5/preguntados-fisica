@@ -1,4 +1,3 @@
-Preguntados-Fisica por Benitez-Tasso
 <!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -8,8 +7,6 @@ Preguntados-Fisica por Benitez-Tasso
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: linear-gradient(#a0e7e5, #b4f8c8);
-      background-image: url('https://i.imgur.com/w1URysh.jpg'); /* Fondo marino */
-      background-size: cover;
       margin: 0;
       padding: 0;
       color: #003f5c;
@@ -61,34 +58,21 @@ Preguntados-Fisica por Benitez-Tasso
       font-weight: bold;
       color: #145374;
     }
-    .ocean-creatures {
+    .ocean-symbols {
+      font-size: 2rem;
       margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-    .ocean-creatures img {
-      height: 80px;
-      width: auto;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🐠 Preguntados Marino: MRU 🐢</h1>
+    <h1>⚓️🐟 Preguntados Marino: MRU 🔱🐚</h1>
     <div class="question" id="question">Cargando pregunta...</div>
     <button class="btn btn-true" onclick="answer(true)">✅ Verdadero</button>
     <button class="btn btn-false" onclick="answer(false)">❌ Falso</button>
     <div class="score" id="score">Puntaje: 0</div>
     <div class="final" id="final"></div>
-    <div class="ocean-creatures">
-      <img src="https://i.imgur.com/Gz0ZloC.png" alt="Tortuga">
-      <img src="https://i.imgur.com/n2rF5cF.png" alt="Pulpo">
-      <img src="https://i.imgur.com/fkF3RnF.png" alt="Pez payaso">
-      <img src="https://i.imgur.com/s59ZyZY.png" alt="Estrella de mar">
-      <img src="https://i.imgur.com/fuvMJcP.png" alt="Caballito de mar">
-    </div>
+    <div class="ocean-symbols">⚓ 🐟 🐚 🧜‍♂️ 🔱 🐬 🌊</div>
   </div>  <script>
     const questions = [
       { text: "En MRU, la velocidad es constante.", correct: true },
@@ -138,3 +122,4 @@ Preguntados-Fisica por Benitez-Tasso
 
     loadQuestion();
   </script></body>
+</html>
